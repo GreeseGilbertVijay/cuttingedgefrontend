@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './screens/Home';
 import SendMail from './screens/SendMail';
+import SplashScreen from './screens/splashScreen';
 import Oct2023 from './screens/FlipBook2023/Oct2023';
 import Nov2023 from './screens/FlipBook2023/Nov2023';
 import Dec2023 from './screens/FlipBook2023/Dec2023';
@@ -33,6 +34,7 @@ export default function App() {
     <ThemeProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Splash" component={SplashScreen}/>
           <Stack.Screen name="Main" component={Home} />
           <Stack.Screen name="SendMail" component={SendMail} />
           <Stack.Screen name="Oct2023" component={Oct2023} />

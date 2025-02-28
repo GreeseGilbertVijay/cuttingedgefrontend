@@ -5,10 +5,9 @@ import BookImageSlider from '../components/BookImageSlider';
 import { NavigationProp } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import Header from '../components/Header';
-import Counter from '../components/Counter';
 import CuttingEdge from '../components/CuttingEdge';
 
-export default function Home({ navigation }: { navigation: NavigationProp<any> }) {
+export default function Home({ }: { navigation: NavigationProp<any> }) {
   const ref = useRef(null);
   useScrollToTop(ref);
   const { isDark, toggleTheme } = useTheme();
@@ -36,9 +35,6 @@ export default function Home({ navigation }: { navigation: NavigationProp<any> }
         </View>
         <View style={styles.sliderContainer}>
           <CuttingEdge />
-        </View>
-        <View style={styles.sliderContainer}>
-          <Counter />
         </View>
       </ScrollView>
     </View>
