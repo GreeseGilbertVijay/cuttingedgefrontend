@@ -15,7 +15,7 @@ const SplashScreen = ({ navigation }) => {
       <Image
         source={require('../../assets/splash-icon.png')}
         style={styles.image}
-        resizeMode="cover" // or "contain" based on your design
+        resizeMode="cover"
       />
     </View>
   );

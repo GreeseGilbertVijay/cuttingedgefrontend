@@ -29,6 +29,11 @@ const SendMail: React.FC<SendMailScreenProps> = ({ navigation }) => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const { isDark, toggleTheme } = useTheme();
 
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
   const handleSubmit = async (): Promise<void> => {
     if (!firstname.trim() || !email.trim() || !message.trim()) {
       setModalMessage('Please fill in all fields');
@@ -36,29 +41,28 @@ const SendMail: React.FC<SendMailScreenProps> = ({ navigation }) => {
       setModalVisible(true);
       return;
     }
-
+  
+    if (!isValidEmail(email)) {
+      setModalMessage('Please enter a valid email address');
+      setIsSuccess(false);
+      setModalVisible(true);
+      return;
+    }
+  
     setLoading(true);
-
     try {
       const response = await fetch('https://spincobackend.onrender.com/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstname,
-          email,
-          message,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstname, email, message }),
       });
-
+  
       const data: EmailResponse = await response.json();
       
       if (data.success) {
         setModalMessage('Email sent successfully!');
         setIsSuccess(true);
         setModalVisible(true);
-        // Clear form
         setFirstname('');
         setEmail('');
         setMessage('');
@@ -73,6 +77,7 @@ const SendMail: React.FC<SendMailScreenProps> = ({ navigation }) => {
       setLoading(false);
     }
   };
+  
 
   const closeModal = () => {
     setModalVisible(false);
