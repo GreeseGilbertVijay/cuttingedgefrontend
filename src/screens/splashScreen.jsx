@@ -5,7 +5,7 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.replace('Main');
-    }, 3000); // 3 seconds
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [navigation]);
@@ -13,15 +13,17 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-          source={require('../../assets/splash-icon.png')}
-        />
+        source={require('../../assets/splash-icon.png')}
+        style={styles.image}
+        resizeMode="cover" // or "contain" based on your design
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {width: '100%',height: '100%',},
+  container: {flex: 1,justifyContent: 'center',alignItems: 'center',},
+  image: {width: '100%',height: '100%',},
 });
-
 
 export default SplashScreen;
