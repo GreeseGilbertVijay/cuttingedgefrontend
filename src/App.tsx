@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from './context/ThemeContext';
+
 import Home from './screens/Home';
 import SendMail from './screens/SendMail';
 import SplashScreen from './screens/splashScreen';
@@ -24,6 +25,7 @@ import Nov2024 from './screens/FlipBook2024/Nov2024';
 import Dec2024 from './screens/FlipBook2024/Dec2024';
 import Jan2025 from './screens/FlipBook2025/Jan2025';
 import Feb2025 from './screens/FlipBook2025/Feb2025';
+import Mar2025 from './screens/FlipBook2025/Mar2025';
 
 enableScreens(); // Add this
 
@@ -34,7 +36,7 @@ export default function App() {
     <ThemeProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Splash" component={SplashScreen}/>
+          <Stack.Screen name="Splash" component={SplashScreen}/>
           <Stack.Screen name="Main" component={Home} />
           <Stack.Screen name="SendMail" component={SendMail} />
           <Stack.Screen name="Oct2023" component={Oct2023} />
@@ -54,6 +56,7 @@ export default function App() {
           <Stack.Screen name="Dec2024" component={Dec2024} />
           <Stack.Screen name="Jan2025" component={Jan2025} />
           <Stack.Screen name="Feb2025" component={Feb2025} />
+          <Stack.Screen name="Mar2025" component={Mar2025} />
         </Stack.Navigator>  
         <StatusBar backgroundColor="black" style="light" />
       </NavigationContainer>
