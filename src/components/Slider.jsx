@@ -11,7 +11,7 @@ const Slider = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    fetch("https://spincobackend.onrender.com/slider")  // Update this to your backend URL if needed
+    fetch("https://spincobackend.vercel.app/slider")  // Update this to your backend URL if needed
       .then((response) => response.json())
       .then((data) => {
         setImages(data);
