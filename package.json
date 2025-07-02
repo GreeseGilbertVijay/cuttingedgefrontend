@@ -1,6 +1,6 @@
 {
   "name": "CuttingEdge",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.ts",
   "scripts": {
     "start": "expo start --dev-client",
@@ -9,14 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-runtime": "~4.0.1",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/native-stack": "^7.2.0",
     "@react-navigation/stack": "^7.1.1",
     "babel-plugin-module-resolve": "^1.7.0",
-    "expo": "~52.0.46",
+    "expo": "~52.0.47",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.76.9",
     "react-native-gesture-handler": "~2.20.2",
     "react-native-reanimated": "~3.16.1",
@@ -28,8 +30,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-class-properties": "^7.27.1",
+    "@babel/plugin-transform-optional-chaining": "^7.27.1",
     "@types/react": "~18.3.12",
     "@types/react-native-version-check": "^3.4.8",
+    "rimraf": "^6.0.1",
     "typescript": "^5.3.3"
   },
   "private": true
