@@ -2,7 +2,7 @@
   "expo": {
     "name": "CuttingEdge",
     "slug": "spinco",
-    "version": "1.0.7",
+    "version": "1.0.9",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.spinco.cuttingedge",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +33,5 @@
         "projectId": "658a37c3-87b1-4173-b7c8-ee94acb02549"
       }
     }
-
   }
 }
