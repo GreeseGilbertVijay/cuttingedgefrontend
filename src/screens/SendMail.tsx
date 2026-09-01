@@ -212,7 +212,15 @@ const styles = StyleSheet.create({
   button: {backgroundColor: '#f2a45a',padding: 15,borderRadius: 8,alignItems: 'center',marginTop: 10,},
   buttonText: { color: '#fff',fontSize: 16,fontWeight: 'bold', },
   modalOverlay: {flex: 1,backgroundColor: 'rgba(0, 0, 0, 0.5)',justifyContent: 'center',alignItems: 'center',},
-  modalContent: {width: '80%',padding: 20,borderRadius: 10,alignItems: 'center',elevation: 5,shadowColor: '#000',shadowOffset: { width: 0, height: 2 },shadowOpacity: 0.25,shadowRadius: 4,},
+  modalContent: {
+    width: '80%',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    elevation: 5,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)', // ✅ replaces shadow* props
+  },
+  
   modalText: {fontSize: 16,textAlign: 'center',marginVertical: 20,},
   modalButton: {paddingHorizontal: 30,paddingVertical: 10,borderRadius: 5,},
   modalButtonText: {color: '#fff',fontSize: 16,fontWeight: 'bold',},

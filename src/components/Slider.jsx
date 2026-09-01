@@ -11,7 +11,7 @@ const Slider = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    fetch("https://spincobackend.vercel.app/slider")  // Update this to your backend URL if needed
+    fetch("https://spincobackend.vercel.app/slider")
       .then((response) => response.json())
       .then((data) => {
         setImages(data);
@@ -64,10 +64,31 @@ const Slider = () => {
 };
 
 const styles = StyleSheet.create({
-  sliderContainer: { justifyContent: "center", alignItems: "center", marginTop: 100,},
-  loaderContainer: { flex: 1,justifyContent: "center", alignItems: "center", },
-  cardWrapper: {width: 250, height: 350, justifyContent: "center", alignItems: "center", borderRadius: 10, overflow: "hidden", backgroundColor: "#f0f0f0", shadowColor: "#000", shadowOpacity: 0.2, shadowOffset: { width: 0, height: 2 }, shadowRadius: 4, elevation: 5,},
-  cardImage: { width: 250, height: 350,},
+  sliderContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 100,
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cardWrapper: {
+    width: 250,
+    height: 350,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    overflow: "hidden",
+    backgroundColor: "#f0f0f0",
+    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)", // ✅ replaces shadow* props
+    elevation: 5,
+  },
+  cardImage: {
+    width: 250,
+    height: 350,
+  },
 });
 
 export default Slider;

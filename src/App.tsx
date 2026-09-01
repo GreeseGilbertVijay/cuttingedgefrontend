@@ -24,7 +24,7 @@ export default function App() {
           <Stack.Screen name="SendMail" component={SendMail} />
           <Stack.Screen name="SingleBook" component={SingleBook} />
         </Stack.Navigator>  
-        <StatusBar backgroundColor="black" style="light" />
+        <StatusBar style="light" />
       </NavigationContainer>
     </ThemeProvider>
   );
