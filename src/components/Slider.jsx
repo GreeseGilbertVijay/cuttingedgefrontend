@@ -5,6 +5,7 @@ import Carousel from "react-native-reanimated-carousel";
 
 const { width } = Dimensions.get("window");
 
+
 const Slider = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
